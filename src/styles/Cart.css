@@ -1,0 +1,70 @@
+.cart  {
+    width: 70%;
+    margin: 3em auto 0 auto;
+}
+
+.cart h1 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.item > div {
+    width: 25%;
+}
+
+.description, .total-amount {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.cart-image img {
+    width: 160px;
+    height: 120px;
+}
+
+.total-amount p {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: red;
+    cursor: pointer;
+}
+
+.price {
+    color: blue;
+}
+
+.quantity button {
+    padding: 5px 10px;
+}
+
+/* Checkout Section */
+.net {
+    display: flex;
+    margin-top: 1em;
+}
+.net > div {
+    width: 25%;
+}
+
+.checkout {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.checkout button {
+    padding: 12px 2em;
+    border: none;
+    font-size: .9em;
+    font-weight: 600;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}

@@ -1,0 +1,163 @@
+.PropertyDetail {
+    width: 70%;
+    margin: 2em auto 0 auto;
+}
+
+.pagetitle {
+    margin-bottom: .8em;
+}
+
+.Item {
+    display: flex;
+}
+
+.Item > div {
+    width: 50%;
+}
+
+.Description {
+    margin: 0 1.4em;
+    line-height: 3em;
+}
+
+
+.Description h3 {
+    color: blue;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.Description p {
+    font-size: 1rem;
+}
+
+.Description button {
+    margin-top: 1em;
+    margin-right: 1em;
+    padding: 11px 2em;
+    border: 1px solid black;
+    background-color: white;
+    font-size: .9em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Description button:hover {
+    background-color: black;
+    color: white;
+}
+
+.propertyImage img {
+    width: 100%;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.update-delete {
+    margin-top: .5em;
+}
+
+.button1 {
+    background-color: rgb(111, 140, 201);
+}
+
+.button1 a {
+    text-decoration: none;
+    color: white;
+}
+
+.button2 {
+    background-color: rgb(223, 77, 77);
+}
+
+/* Reviews Section */
+.reviews {
+    margin-top: 1em;
+}
+
+.reviews h2 {
+    margin-bottom: .5em;
+}
+
+.comment{
+    line-height: 2.5em;
+}
+
+.comment p {
+    display: inline-block;
+    font-size: 1em;
+}
+
+.username {
+    font-weight: 600;
+}
+
+.input-review {
+    margin-top: 1em;
+}
+
+.input-review form {
+    width: 60%;
+}
+
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    height: 150px;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.butnx {
+    background-color: black;
+    color: white;
+    padding: 12px 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%;
+}
+
+/* Media Queries */
+
+@media(max-width: 1024px) {
+    .Item {
+        flex-direction: column;
+    }
+
+    .Item>div {
+        width: 100%;
+    }
+
+    .Description {
+        margin: 0;
+        margin: 1em 0;
+        line-height: 2.5em;
+    }
+
+    .button {
+        margin: 4px 3px 4px 0;
+    }
+}
