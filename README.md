@@ -2,7 +2,9 @@
 ## By Jevans Otieno
 
 ## Screenshot
- ![image](./tastebite-client/src/assets/images/hero-tastebite.png)
+ ![image](https://github.com/G-vans/homey/blob/main/src/images/Screenshot-home.png)
+ ![image](https://github.com/G-vans/homey/blob/main/src/images/Screenshot-home2.png)
+ ![image](https://github.com/G-vans/homey/blob/main/src/images/Screenshot-home3.png)
 
  ## Table of Content
  - [Description](#description)
