@@ -8,13 +8,12 @@
 }
 
 .header {
-    background-color: #dcf2f9;
-    height: 80px;
+    background-color: #13376c;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    position: sticky;
     top: 0;
     z-index: 999;
 }
@@ -23,12 +22,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 40px;
     max-width: 1500px;
 }
 
 .navbar-logo {
-    color: #13376c;
+    color: #fff;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -50,22 +49,20 @@
 }
 
 .nav-links {
-    color: #13376c;
+    color: #dcf2f9;
     display: flex;
     align-items: center;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    height: 80px;
-    
+    height: 40px;
 }
 
 .nav-links a {
     font-weight: 700;
-    font-family: 'Manrope', sans-serif;
 }
 
 .nav-links:hover {
-    border-bottom: 4px solid #13376c;
+    border-bottom: 4px solid #fff;
     transition: all 0.2s ease-out;
 }
 
@@ -83,16 +80,15 @@
 }
 
 .hero-container > h1 {
-    color: #fff;
+    color: #13376c;
     font-size: 100px;
     margin-top: -100px;
 }
   
 .hero-container > p {
     margin-top: 4px;
-    color: #fff;
+    color: #000;
     font-size: 32px;
-    font-family: 'Manrope', sans-serif;
 }
   
 .hero-btns {
@@ -101,6 +97,7 @@
   
 .hero-btns .btn {
     margin: 6px;
+    background-color: #dcf2f9;
 }
   
 .fa-play-circle {

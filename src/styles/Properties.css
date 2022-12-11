@@ -44,12 +44,12 @@
 
 .details {
     margin-top: 1em;
-    color: gray;
+    color: #000;
     line-height: 1.5em;
 }
 
 @media (max-width: 1200px) {
-    .product-container {
+    .property-container {
         width: 48%;
     }
 }

@@ -1,10 +1,11 @@
 .PropertyDetail {
-    width: 70%;
     margin: 2em auto 0 auto;
+    width: 60%;
 }
 
 .pagetitle {
     margin-bottom: .8em;
+    color: #13376c;
 }
 
 .Item {
@@ -52,6 +53,7 @@
     width: 100%;
 }
 
+
 .button {
     border: none;
     color: white;
@@ -83,7 +85,6 @@
     background-color: rgb(223, 77, 77);
 }
 
-/* Reviews Section */
 .reviews {
     margin-top: 1em;
 }
@@ -130,7 +131,7 @@ textarea:focus {
     outline: none;
 }
 
-.butnx {
+.btnxx {
     background-color: black;
     color: white;
     padding: 12px 2px;
