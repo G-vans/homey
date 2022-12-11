@@ -55,9 +55,8 @@
 [Go Back to the top](#Homey-Estate-Intel-App)
 
 ## Known Bugs
-* deploying backend successfully.
-* Unable to fetch from server to the react frontend.
-* Uncaught promise in the fetch actions
+* Deploying backend unsuccessfully.
+* All requests are done from Localhost.
 
 
 ## License
