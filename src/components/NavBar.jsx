@@ -17,8 +17,8 @@ export default function NavBar({ user, setUser }) {
       <div className='navbar-container'>
         <Link className="navbar-logo" to="/">Estate-Intel</Link> <div className='nav-menu'>
           <Link className='nav-links' to="/">Home</Link>
-          <Link className='nav-links' to="/properties">Property</Link>
-          
+          <Link className='nav-links' to="/properties">Properties</Link>
+          <Link className='nav-links' to="/cart">Cart</Link>
           {user === null  ? <Link className='nav-links' to='/auth'>Login</Link> : <Link className='nav-links' onClick={handleLogoutClick}>Logout</Link>}
         </div>
       </div>

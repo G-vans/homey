@@ -6,7 +6,7 @@ export default function Login({ handleClick, onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(false);
 
     function handleSubmit(e) {
@@ -55,7 +55,7 @@ export default function Login({ handleClick, onLogin }) {
                     <button type="submit">Login</button>
                 </div>
                 <div className="input-control">
-                    <p className='p'>Don't have an account ? <span onClick={handleClick}>Sign Up</span> </p>
+                    <p className='p'>Don't have an account ? <span onClick={handleClick}>Please Sign Up</span> </p>
                 </div>
             </form>
         </div>

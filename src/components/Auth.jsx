@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import '../styles/SignUp.css'
 import Login from './Login'
 import SignUp from './SignUp'
+import '../styles/SignUp.css'
 
-export default function Auth({onLogin}) {
+ function Auth({onLogin}) {
     
     const [login, setLogin] = useState(true)
     
@@ -18,3 +18,5 @@ export default function Auth({onLogin}) {
         </div>
     )
 }
+
+export default Auth;

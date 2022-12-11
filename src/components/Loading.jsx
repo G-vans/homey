@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Loading() {
+ function Loading() {
   return (
     <div>
-        <h2>Please wait while we load up the Properties...</h2>
+        <h2>Please wait while we load up...</h2>
     </div>
   )
 }
+
+export default Loading;

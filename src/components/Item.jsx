@@ -1,11 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import "../styles/Item.css"
 import Loading from './Loading'
 import Review from './Review'
+import "../styles/Item.css"
 
-
-export default function Item({ addToCart, user }) {
+function Item({ addToCart, user }) {
 
     const { id } = useParams()
     const [property, setProperty] = useState([])
@@ -27,9 +26,7 @@ export default function Item({ addToCart, user }) {
                 setProperty(item)
             })
     }
-    useEffect(() => {
-        fetchProperty()
-    }, [reload])
+    useEffect(() => {fetchProperty()}, [reload])
 
     function handleDelete(property) {
         fetch(`http://localhost:3000/properties/${property.id}`, {
@@ -49,27 +46,30 @@ export default function Item({ addToCart, user }) {
                     </div>
                     <div className='Description'>
                         <h1>{property.title}</h1>
-                        <h2>Category: {property.category.name}</h2>
                         <h2>Kshs. {property.price}</h2>
                         <p>{property.description}</p>
+                        <div>
+                            <button className='bt1' onClick={() => { handleAddToCart(property); }}>Add to Cart</button>
+                            <button className='bt2' onClick={() => { navigate(`/cart`) }}>Go to Cart</button>
+                        </div>
                     </div>
                 </div>
                 {user !== null && user.role === 'admin' &&
                     <div className='update-delete'>
-                        <button className='button button1'><a href={`edit/${property.id}`}>Edit Property</a></button>
-                        <button className='button button2' onClick={() => { handleDelete(property); navigate(`/property`) }}>Delete Property</button>
+                        <button className='button button1'><a href={`edit/${property.id}`}>Edit property</a></button>
+                        <button className='button button2' onClick={() => { handleDelete(property); navigate(`/properties`) }}>Delete Property</button>
                     </div>
                 }
                 <div className="reviews">
                     <h2>Reviews</h2>
                     <hr style={{ marginBottom: ".5em" }} />
-                    {property.reviews.length === 0 &&
+                    {property.reviews === 0 &&
                         <div className="review-items" style={{textAlign:"center"}}>
-                            <h2 >There are no reviews for this development.</h2>
-                            <p>Be the first to review.</p>
+                            <h2 >There are no reviews for this property.</h2>
+                            <p>Be the first on to review.</p>
                         </div>
                     }
-                    {property.reviews.length > 0 &&
+                    {property.reviews > 0 &&
                         <div className='review-items'>
                             {property.reviews.map((review) =>
                                 <div key={review.id} className='comment'>
@@ -79,7 +79,7 @@ export default function Item({ addToCart, user }) {
                         </div>
                     }
                     {user === null && 
-                        <p style={{color:"blue"}}>Please login to the system to review this property.</p>
+                        <p style={{color:"blue"}}>Please login to review property.</p>
                     }
 
                     {user !== null &&
@@ -96,3 +96,5 @@ export default function Item({ addToCart, user }) {
         </div>
     )
 }
+
+export default Item;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-export default function Property({ property }) {
+ function Property({ property }) {
   const navigate = useNavigate()
   return (
     <div className='property-container' onClick={() => { navigate(`/properties/${property.id}`); }}>
@@ -18,3 +18,5 @@ export default function Property({ property }) {
     </div>
   )
 }
+
+export default Property;

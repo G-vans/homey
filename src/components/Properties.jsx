@@ -1,19 +1,16 @@
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Loading from "./Loading"
-
+import Filter from "./Filter"
 import ShowProperties from "./ShowProperties"
 import "../styles/Properties.css"
 
-
-export default function Properties({ user }) {
+function Properties({ user }) {
 
     // states 
     const [properties, setProperties] = useState([]);
-
+    const [filter, setFilter] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    // navigation
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -21,17 +18,20 @@ export default function Properties({ user }) {
             .then((res) => res.json())
             .then((data) => {
                 setProperties(data);
+                setFilter(data);
                 setIsLoading(false);
             });
     }, [isLoading]);
+    // filter
+    const filterProperties = (category) => {
+        const updatedList = properties.filter(
+            (property) => property.category.name === category
+        );
+        setFilter(updatedList);
+    };
 
-    // filter products based on categories
-    
-
-    // search state
     const [query, setQuery] = useState("");
 
-    // search fields
     const keys = ["title", "description"];
 
     // search function
@@ -43,13 +43,15 @@ export default function Properties({ user }) {
 
     return (
         <div className='properties'>
-            
+            <Filter input={setQuery} setFilter={setFilter} filterProperties={filterProperties} properties={properties} />
             <div className='headers'>
                 {user && user.role === 'admin' &&
                     <button onClick={() => { navigate('/addproperty') }} className='addbtn'>Add New Property</button>
                 }
             </div>
-            {isLoading ? <Loading /> : <ShowProperties search={search}  />}
+            {isLoading ? <Loading /> : <ShowProperties search={search} filter={filter} />}
         </div>
     )
 }
+
+export default Properties;

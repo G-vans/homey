@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const STYLES = ["btn--primary", "btn--outline", "btn--test"];
+const STYLES = ["btn--primary", "btn--test"];
 
-const SIZES = ["btn--medium", "btn--large"];
+const SIZES = ["btn--medium"];
 
 export const Button = ({
   children,

@@ -25,7 +25,8 @@ export default function SignUp({ handleClick, onLogin }) {
                 username,
                 email,
                 password,
-                password_confirmation: passwordConfirmation
+                password_confirmation: passwordConfirmation,
+                role: "visitor"
             }),
         }).then((r) => {
             setIsLoading(false);
@@ -54,12 +55,12 @@ export default function SignUp({ handleClick, onLogin }) {
                     <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <div className="input-control">
-                    <label htmlFor="password">Password-confirmation</label>
+                    <label htmlFor="password">Confirm Password</label>
                     <input type="password" id="password2" name="password_confirmation" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
                 </div>
                 <div className='input-group'>
                     {errors.length > 0 && (
-                        <div style={{ color: "blue" }}>
+                        <div style={{ color: "red" }}>
                             {errors.map((error) => (
                                 <p key={error}>{error}</p>
                             ))}

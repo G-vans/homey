@@ -2,26 +2,31 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import '../styles/Create.css'
 
-export default function Create() {
+ function Create() {
 
     // states
+    const [categories, setCategories] = useState([])
     const [errors, setErrors] = useState([])
     const navigate = useNavigate()
     const params = useParams()
-
-    // eslint-disable-next-line no-unused-vars
     const [id, setId] = useState(params.id)
-
-
+    // categories GET request
+    useEffect(() => {
+        fetch('http://localhost:3000/categories')
+            .then((response) => response.json())
+            .then((data) => {
+                setCategories(data)
+            })
+    }, [])
     // Form inputs
     const [formData, setFormData] = useState({
         title: "",
         description: "",
         price: 0,
-        size: 1,
+        category_id: 1,
+        quantity: 1,
         image_url: ""
     })
-
     // handling input change 
     function handleInputChange(event) {
         setFormData({
@@ -30,7 +35,7 @@ export default function Create() {
         });
     }
 
-    // fetching data while editing
+    // fetch data while editing
     useEffect(() => {
         if (id) {
             fetch(`http://localhost:3000/properties/${id}`)
@@ -66,17 +71,23 @@ export default function Create() {
             <h1>{id ? "Edit Property" : "Add Property"}</h1>
             <form onSubmit={handleFormSubmit}>
                 <label for="fname">Title</label>
-                <input type="text" id="fname" name='title' onChange={handleInputChange} value={formData.title} placeholder="Enter Building name" />
+                <input type="text" id="fname" name='title' onChange={handleInputChange} value={formData.title} placeholder="Enter property name" />
 
                 <label for="fname">Price</label>
-                <input type="text" id="fname" name='price' onChange={handleInputChange} value={formData.price} placeholder="Enter price or value of the property" />
+                <input type="text" id="fname" name='price' onChange={handleInputChange} value={formData.price} placeholder="Enter Price" />
 
                 <label for="lname">Image</label>
                 <input type="text" id="lname" name='image_url' onChange={handleInputChange} value={formData.image_url} placeholder="Enter image url" />
 
+                <label for="country">Category</label>
+                <select id="country" name='category_id' onChange={handleInputChange}>
+                    {categories.map((category) =>
+                        <option key={category.id} value={category.id}>{category.name}</option>
+                    )}
+                </select>
 
                 <label for="subject">Description</label>
-                <textarea id="subject" name='description' onChange={handleInputChange} value={formData.description} placeholder="Add description, explaining the development"></textarea>
+                <textarea id="subject" name='description' onChange={handleInputChange} value={formData.description} placeholder="Add description. Minimum (100 Characters)"></textarea>
 
                 <div className="errors">
                     {errors.length > 0 && (
@@ -92,3 +103,5 @@ export default function Create() {
         </div>
     )
 }
+
+export default Create;

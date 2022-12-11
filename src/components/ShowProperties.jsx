@@ -1,7 +1,7 @@
 import React from 'react'
 import Property from './Property'
 
-export default function ShowProperties({filter, search}) {
+function ShowProperties ({filter, search}) {
     return (
         <div>
             <div className='properties-wrapper'>
@@ -12,3 +12,5 @@ export default function ShowProperties({filter, search}) {
         </div>
     )
 }
+
+export default ShowProperties;
