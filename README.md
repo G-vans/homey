@@ -25,7 +25,8 @@
 1. As a user, I want to be able to login and log out from the app
 2. As a user, I want to be able to view the properties
 3. As a user, I want to view all comments
-4. As a user, I want to to edit and delete a comment or review
+4. As a user, I want to edit and delete a comment or review
+4. As a user, I want to be able to add to a cart and delete the cart
 
 
 [Go Back to the top](#Homey-Estate-Intel-App)
