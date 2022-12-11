@@ -59,6 +59,9 @@
 * Deploying backend unsuccessfully.
 * All requests are done from Localhost.
 
+## Backend Repository
+* The repository for the backend is [homey backend api](https://github.com/G-vans/Homey-backend)
+
 
 ## License
 MIT License
